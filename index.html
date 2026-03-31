@@ -10,31 +10,64 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
+            scroll-behavior: smooth; 
         }
+
         header {
             background-color: #2c3e50;
             color: white;
             padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
+        header h1 {
+            margin-top: 0;
+            animation: fadeInDown 0.8s ease-out; 
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 10px;
+            padding: 8px 12px;
             text-decoration: none;
             font-weight: bold;
             cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease; 
+            display: inline-block;
         }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px); 
+        }
+
         .container {
             padding: 20px;
             max-width: 900px;
             margin: auto;
         }
+
         .card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.6s ease-out; 
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         .img-profile {
             width: 200px;
             height: auto;
@@ -43,15 +76,91 @@
             object-fit: cover;
             display: block;
             margin: 20px auto;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease; 
+            animation: fadeIn 1s ease-in;
         }
+
+        .img-profile:hover {
+            transform: scale(1.05) rotate(1deg); 
+        }
+
         .hidden-section {
             display: none;
         }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+
+        /* --- Stile Bottone Download --- */
+        button {
+            background-color: #0e3956;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
         footer {
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* --- Animazioni Keyframes --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -59,8 +168,7 @@
 
 <header>
     <h1>Gennaro Mattia Cataudo</h1>
-    <img src="./images/io.jpg" alt="Foto di Mattia" class="img-profile">
- 
+    <img src="./images/io.jpg" alt="Foto di Mattia" class="img-profile"> 
     <nav>
         <a href="#about">Chi Sono</a>
         <a href="#experience">Esperienze lavorative</a>
@@ -73,77 +181,48 @@
 </header>
 
 <div class="container">
-
     <div class="card" id="about">
         <h2>Chi Sono</h2>
         <p>
             Ciao! Sono Gennaro Mattia Cataudo, System Administrator qualificato con esperienza nella gestione di sistemi Windows e Linux, configurazione e manutenzione di reti aziendali, sicurezza informatica e automazione dei processi IT.
-            <br>
-            <br> 
+            <br><br> 
             Durante il mio percorso professionale ho sviluppato competenze nella configurazione di server DNS e DHCP, gestione di VPN e firewall, installazione e manutenzione di hardware e software, oltre alla documentazione tecnica e supporto agli utenti finali.
-            <br>
-            <br> 
+            <br><br> 
             Lavoro con metodo, precisione e spirito di squadra, portando entusiasmo e dedizione in ogni progetto e sempre alla ricerca di nuove sfide che mi permettano di crescere professionalmente.
         </p>
     </div>
 
     <div class="card hidden-section" id="experience">
         <h2>Esperienze lavorative</h2>
-        <h3>Polizzese Elettricità srl - Sales Assistant – IT & Elettronica 
-            <br>
-            (01/2021 - 10/2025)</h3>
+        
+        <h3>Polizzese Elettricità srl - Sales Assistant – IT & Elettronica <br><small>(01/2021 - 10/2025)</small></h3>
         <p>
-            Acquisizione di competenze in ambito elettronico e informatico.
-            Gestione della manutenzione, installazione e configurazione degli apparati informatici,
-            sviluppando al contempo capacità relazionali, gestionali e di assistenza al cliente.
+            Acquisizione di competenze in ambito elettronico e informatico. Gestione della manutenzione, installazione e configurazione degli apparati informatici, sviluppando al contempo capacità relazionali, gestionali e di assistenza al cliente.
         </p>
-    
-        <h3>SETA srl - Help Desk / Customer Care assicurativo
-            <br>
-            (11/2020 - 01/2021)</h3>
+            
+        <h3>SETA srl - Help Desk / Customer Care assicurativo <br><small>(11/2020 - 01/2021)</small></h3>
         <p>
-            Gestione chiamate e richieste clienti per Reale Mutua e Italiana,
-            assistenza su prodotti e servizi, gestione reclami e non conformità.
-            Aggiornamento sistemi CRM e smistamento richieste ai reparti
-            competenti, con utilizzo di software di supporto remoto (AnyDesk,
-            TeamViewer).
+            Gestione chiamate e richieste clienti per Reale Mutua e Italiana, assistenza su prodotti e servizi, gestione reclami e non conformità. Aggiornamento sistemi CRM e smistamento richieste ai reparti competenti, con utilizzo di software di supporto remoto (AnyDesk, TeamViewer).
         </p>
 
-        <h3>Webcom SRLS - Junior IT Support / Help Desk 
-            <br>
-            (08/2020 - 11/2020)</h3>
+        <h3>Webcom SRLS - Junior IT Support / Help Desk <br><small>(08/2020 - 11/2020)</small></h3>
         <p>
-            Installazione e manutenzione di stampanti, sia in rete che in loco. Mi sono inoltre occupato
-            dell'installazione e configurazione di sistemi operativi su postazioni
-            dei clienti finali, operando da remoto tramite il software AnyDesk.
-            Infine, ho gestito l'infrastruttura di rete aziendale, intervenendo sulla
-            configurazione di router, switch, firewall e VPN.
+            Installazione e manutenzione di stampanti, sia in rete che in loco. Mi sono inoltre occupato dell'installazione e configurazione di sistemi operativi su postazioni dei clienti finali, operando da remoto tramite il software AnyDesk. Infine, ho gestito l'infrastruttura di rete aziendale, intervenendo sulla configururazione di router, switch, firewall e VPN.
         </p>
 
-        <h3> Poste Italiane - Logistics & Delivery Assistant
-            <br>
-            (09/2020 - 10/2020)</h3>
+        <h3>Poste Italiane - Logistics & Delivery Assistant <br><small>(09/2020 - 10/2020)</small></h3>
         <p>
-            Consegna e della raccolta della corrispondenza nelle zone a me assegnate.
-            Le mie mansioni includevano la distribuzione di lettere, pacchi e altri articoli postali ai destinatari, oltre alla raccolta della corrispondenza da spedire. 
-            L'obiettivo era garantire un servizio puntuale e accurato, assicurando che la posta venisse recapitata correttamente e nei tempi previsti.
+            Consegna e della raccolta della corrispondenza nelle zone a me assegnate. Le mie mansioni includevano la distribuzione di lettere, pacchi e altri articoli postali ai destinatari, oltre alla raccolta della corrispondenza da spedire. L'obiettivo era garantire un servizio puntuale e accurato, assicurando che la posta venisse recapitata correttamente e nei tempi previsti.
         </p>
 
-        <h3>The Space Cinema - Addetto Customer Service – Multisala Cinematografica
-            <br>
-            (12/2019 - 01/2020)</h3>
+        <h3>The Space Cinema - Addetto Customer Service – Multisala Cinematografica <br><small>(12/2019 - 01/2020)</small></h3>
         <p>
-            Gestione delle operazioni di vendita dei biglietti per spettacoli cinematografici e altri eventi.
-            Le attività principali includevano l'incasso dei pagamenti, la vendita dei biglietti, l'applicazione di eventuali sconti o promozioni e l’assistenza ai clienti per richieste o problemi legati alle transazioni o agli eventi. Inoltre, mi occupavo della gestione dell’area food & beverage, provvedendo quotidianamente al rifornimento e all’organizzazione dei prodotti
+            Gestione delle operazioni di vendita dei biglietti per spettacoli cinematografici e altri eventi. Le attività principali includevano l'incasso dei pagamenti, la vendita dei biglietti, l'applicazione di eventuali sconti o promozioni e l’assistenza ai clienti per richieste o problemi legati alle transazioni o agli eventi. Inoltre, mi occupavo della gestione dell’area food & beverage, provvedendo quotidianamente al rifornimento e all’organizzazione dei prodotti.
         </p>
 
-        <h3>Planet Group, e-Call - Customer Service & Call Center Operator
-            <br>
-            (01/2017 - 09/2019)</h3>
+        <h3>Planet Group, e-Call - Customer Service & Call Center Operator <br><small>(01/2017 - 09/2019)</small></h3>
         <p>
-            Gestione delle chiamate in uscita per conto di TIM, Wind, Infostrada, Eni Luce e Gas e Kena Mobile.
-            Il mio ruolo prevedeva il contatto con clienti e potenziali clienti per la promozione e vendita di prodotti e servizi, la verifica dei dati e la raccolta di feedback.
-            Era fondamentale comunicare in modo chiaro ed efficace per raggiungere gli obiettivi assegnati, come i target di vendita e i volumi di chiamata.
+            Gestione delle chiamate in uscita per conto di TIM, Wind, Infostrada, Eni Luce e Gas e Kena Mobile. Il mio ruolo prevedeva il contatto con clienti e potenziali clienti per la promozione e vendita di prodotti e servizi, la verifica dei dati e la raccolta di feedback. Era fondamentale comunicare in modo chiaro ed efficace per raggiungere gli obiettivi assegnati, come i target di vendita e i volumi di chiamata.
         </p>
     </div>
 
@@ -165,7 +244,7 @@
             <li>PhpMyAdmin</li> 
             <li>Cisco Packet Tracer</li>
             <li>Canva</li>
-            <li>HTML</li>
+            <li>HTML & CSS</li>
             <li>VS Code</li>
             <li>N8N</li>
         </ul>
@@ -184,55 +263,38 @@
 
     <div class="card hidden-section" id="certified">
         <h2>Attestati</h2>
-        <h3>Ecipa - Qualifica professionale "System Administrator"
-        <br>    
-        (02/2020 - 11/2020)</h3>
-    <p>
-       Durante il corso per conseguire la qualifica professionale come
-       System Administrator ho imparato a gestire sistemi operativi Windows
-       e Linux, configurare reti aziendali, garantire la sicurezza informatica,
-       automatizzare attività con script, monitorare l'infrastruttura IT per
-       garantirne l'efficienza, risolvere problemi tecnici hardware e software
-       e ad eseguire backup sicuri intervenendo tempestivamente per
-       garantire la continuità dei servizi. 
-    </p>
+        <h3>Ecipa - Qualifica professionale "System Administrator" <br><small>(02/2020 - 11/2020)</small></h3>
+        <p>
+            Durante il corso per conseguire la qualifica professionale come System Administrator ho imparato a gestire sistemi operativi Windows e Linux, configurare reti aziendali, garantire la sicurezza informatica, automatizzare attività con script, monitorare l'infrastruttura IT per garantirne l'efficienza, risolvere problemi tecnici hardware e software e ad eseguire backup sicuri intervenendo tempestivamente per garantire la continuità dei servizi.
+        </p>
     </div>
 
-    
     <div class="card hidden-section" id="contact">
         <h2>Contatti</h2>
-        <p>Email: gennaromattia.cataudo2f@gmail.com</p>
-        <p>Numero di cellulare: 3884826364</p>
-        <p>Instagram: cataudo_mattia
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mattia-cataudo-48029223" target="_blank">linkedin.com/in/mattia-cataudo-48029223</a></p>
-        <a href="files/CV_Mattia.pdf" download><button>Scarica CV PDF</button></a>
+        <p><strong>Email:</strong> gennaromattia.cataudo2f@gmail.com</p>
+        <p><strong>Numero di cellulare:</strong> 3884826364</p>
+        <p><strong>Instagram:</strong> cataudo_mattia</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mattia-cataudo-48029223" target="_blank" style="color: #63c3e9; text-decoration: none; font-weight: bold;">Profilo LinkedIn</a></p>
+        <a href="files/CV_Mattia.pdf" download style="text-decoration: none;">
+            <button>Scarica CV in PDF</button>
+        </a>
     </div>
 
-<div class="card hidden-section" id="formation">
-       <h2>Formazione</h2>
-       
-       <h3>EDO - Certificazione ufficiale - Competenze digitali - (15h) - 2026
-       <br>
-       Certificazione ufficilale - 15 Ore - (01/01/2026)</h3>
+    <div class="card hidden-section" id="formation">
+        <h2>Formazione</h2>
+        <h3>EDO - Certificazione ufficiale - Competenze digitali <br><small>15 Ore - (01/01/2026)</small></h3>
+        <p>Aggiornamento e certificazione delle competenze digitali</p>
+        
+        <h3>Udemy - "Impariamo da zero SQL con Oracle, SQL Server e MySQL" <br><small>Certificato di Completamento - 25 Ore - (11/2025)</small></h3>
+        <p>
+            Preparazione strutturata sui database relazionali, comprendendo la creazione delle tabelle, la gestione dei dati, le query SQL (SELECT, filtri, JOIN, GROUP BY, funzioni di aggregazione e sottoselezioni) e l'utilizzo dei principali DBMS: Oracle, SQL Server e MySQL.
+        </p>
 
-<p> Aggiornamento e certificazione delle competenze digitali</p>
-       
-       <h3>Udemy - "Impariamo da zero SQL con Oracle, SQL Server e MySQL"
-       <br>
-        Certificato di Completamento - 25 Ore - (11/2025)</h3>
-<p>
-    Preparazione strutturata sui database relazionali, comprendendo la creazione delle tabelle, la gestione dei dati, le
-    query SQL (SELECT, filtri, JOIN, GROUP BY, funzioni di aggregazione e
-    sottoselezioni) e l'utilizzo dei principali DBMS: Oracle, SQL Server e MySQL
-</p>
-
-      <h3>Istituto Tecnico Professionale IPSIA G.FERRARIS
-      <br> 
-      Diploma - (2010-2016)</h3>
-<p>
-    Assemblaggio e manutenzione di computer, diagnosi guasti hardware e riparazioni, installazione e configurazione di sistemi operativi, indirizzamento IP, sicurezza di rete di base e risoluzione di problemi
-    tecnici ricorrenti in ambito lavorativo
-</p>
+        <h3>Istituto Tecnico Professionale IPSIA G.FERRARIS <br><small>Diploma - (2010-2016)</small></h3>
+        <p>
+            Assemblaggio e manutenzione di computer, diagnosi guasti hardware e riparazioni, installazione e configurazione di sistemi operativi, indirizzamento IP, sicurezza di rete di base e risoluzione di problemi tecnici ricorrenti in ambito lavorativo.
+        </p>
+    </div>
 </div>
 
 <footer>
@@ -241,20 +303,23 @@
 
 <script>
     const links = document.querySelectorAll('nav a');
-
+    
     links.forEach(link => {
-        link.addEventListener('click', () => {
-            // Nasconde TUTTE le sezioni, compreso "Chi Sono"
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Nasconde TUTTE le sezioni
             document.querySelectorAll('.card').forEach(section => {
                 section.style.display = 'none';
             });
-
+            
             const targetId = link.getAttribute('href').replace('#', '');
             const targetSection = document.getElementById(targetId);
-
+            
             if (targetSection) {
-                targetSection.style.display = 'block';
-                targetSection.scrollIntoView({ behavior: 'smooth' });
+                targetSection.style.display = 'block'; 
+                const y = targetSection.getBoundingClientRect().top + window.scrollY - 20;
+                window.scrollTo({ top: y, behavior: 'smooth' });
             }
         });
     });
